@@ -10,6 +10,7 @@ const answerB = document.getElementById("answerB");
 const answerC = document.getElementById("answerC");
 const answerD = document.getElementById("answerD");
 const przyciski = { A: answerA, B: answerB, C: answerC, D: answerD };
+const graDiv = document.getElementById("gra");
 
 async function fetchQuestion() {
   const temat = document.getElementById("kat").value;
@@ -35,6 +36,7 @@ async function fetchQuestion() {
     odpowiedzWybrana = false;
     resetKolory();
     indicator.style.visibility = "hidden";
+    graDiv.style.visibility = "visible";
     const q = data.output;
 
     pytanie.textContent = q.pytanie;
