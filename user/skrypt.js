@@ -2,7 +2,7 @@ document.getElementById("start").addEventListener("click", () => {
   fetchQuestion();
 });
 
-const ipAdress = "192.168.0.148"; // 192.168.0.148 - home, 172.16.15.186 - school
+const ipAdress = "172.16.15.186"; // 192.168.0.148 - home, 172.16.15.186 - school
 const indicator = document.getElementById("indicator");
 const pytanie = document.getElementById("pytanie");
 const answerA = document.getElementById("answerA");
