@@ -187,3 +187,10 @@ button[id^="answer"]:hover {
     padding: 8px 10px;
   }
 }
+
+#answers {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  align-items: center;
+}
