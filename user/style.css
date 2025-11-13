@@ -194,3 +194,13 @@ button[id^="answer"]:hover {
   align-items: stretch;
   align-items: center;
 }
+
+.correct-answer {
+  background-color: #2e7d32 !important;
+  color: #fff !important;
+}
+
+.wrong-answer {
+  background-color: #c62828 !important;
+  color: #fff !important;
+}

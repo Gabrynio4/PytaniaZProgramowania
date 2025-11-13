@@ -48,4 +48,46 @@ function displayHistory(data) {
   });
 }
 
+function displayHistory(data) {
+  const tableBody = document.querySelector("#historyTable tbody");
+  tableBody.innerHTML = "";
+
+  data.forEach((entry) => {
+    const row = document.createElement("tr");
+
+    const lpCell = document.createElement("td");
+    lpCell.textContent = entry.id_wpisu;
+
+    const kategoriaCell = document.createElement("td");
+    kategoriaCell.textContent = entry.dziedzina_programowania;
+
+    const pytanieCell = document.createElement("td");
+    pytanieCell.textContent = entry.pytanie;
+
+    const odpowiedzCell = document.createElement("td");
+    odpowiedzCell.textContent = entry.odpowiedz_uzytkownika;
+
+    const poprawnaCell = document.createElement("td");
+    poprawnaCell.textContent = entry.poprawna_odpowiedz;
+
+    // --- porównanie odpowiedzi ---
+    const userAns = entry.odpowiedz_uzytkownika?.trim().toLowerCase();
+    const correctAns = entry.poprawna_odpowiedz?.trim().toLowerCase();
+
+    if (userAns && correctAns && userAns[0] === correctAns[0]) {
+      odpowiedzCell.classList.add("correct-answer");
+    } else {
+      odpowiedzCell.classList.add("wrong-answer");
+    }
+
+    row.appendChild(lpCell);
+    row.appendChild(kategoriaCell);
+    row.appendChild(pytanieCell);
+    row.appendChild(odpowiedzCell);
+    row.appendChild(poprawnaCell);
+
+    tableBody.appendChild(row);
+  });
+}
+
 history();

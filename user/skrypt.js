@@ -50,6 +50,7 @@ async function fetchQuestion() {
     output.textContent = `Error: ${error.message}`;
     pytanie.textContent = "Błąd podczas pobierania pytania!";
   }
+  dopasujWysokoscPrzyciskow();
 }
 
 function sprawdzOdpowiedz(wybrana) {
@@ -98,3 +99,13 @@ answerA.addEventListener("click", () => sprawdzOdpowiedz("A"));
 answerB.addEventListener("click", () => sprawdzOdpowiedz("B"));
 answerC.addEventListener("click", () => sprawdzOdpowiedz("C"));
 answerD.addEventListener("click", () => sprawdzOdpowiedz("D"));
+
+function dopasujWysokoscPrzyciskow() {
+  const przyciski = [answerA, answerB, answerC, answerD];
+
+  przyciski.forEach((btn) => (btn.style.height = "auto"));
+
+  const maxHeight = Math.max(...przyciski.map((btn) => btn.offsetHeight));
+
+  przyciski.forEach((btn) => (btn.style.height = maxHeight + "px"));
+}
